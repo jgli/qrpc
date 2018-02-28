@@ -1,0 +1,22 @@
+package qrpc;
+
+message MsgMeta {
+    //
+    // shared for request and response
+    //
+    required uint64 sequence = 1;
+
+    //
+    // used for request
+    //
+    optional string service = 2;
+    optional string method = 3;
+    optional bool cancel = 4 [default = false];
+    optional uint32 compression_type = 5 [default = 0];
+
+    //
+    // used for response
+    //
+    optional uint32 code = 6 [default = 0];
+    optional string error_text = 7;
+}

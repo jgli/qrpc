@@ -1,0 +1,13 @@
+package qrpc;
+
+option cc_generic_services = true;
+
+message StatusRequest {
+}
+
+message StatusResponse {
+}
+
+service BuiltinService {
+    rpc Status(StatusRequest) returns (StatusResponse);
+}
